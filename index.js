@@ -15,6 +15,7 @@ const sampleEmployee = {
 	},
 };
 
+app.use(cors({ origin: ["http://localhost:5173"] }));
 app.get("/api/employees", (req, res) => {
 	res.json({ results: [sampleEmployee] });
 });
@@ -22,5 +23,3 @@ app.get("/api/employees", (req, res) => {
 app.listen(port, () => {
 	console.log(`Server running on port ${port}`);
 });
-
-app.use(cors({ origin: ["http://localhost:3000"] }));
